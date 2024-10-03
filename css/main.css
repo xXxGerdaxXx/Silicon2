@@ -1781,6 +1781,7 @@ footer {
     }
 
     .faq-content {
+        padding-top: 0;
         display: flex;
         padding-left: 0;
         padding-right: 0;
@@ -1811,7 +1812,7 @@ footer {
         display: grid;
         width: 440px;
         grid-template-columns: 1fr 1fr;
-        padding-top: 4rem;
+        padding-top: 2rem;
     }
 
     .icon-containers {
