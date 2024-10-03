@@ -243,7 +243,7 @@ header .container {
 .hero-image img {
 display: none;
 margin-right: 3rem;
-margin-top: 7.8rem;
+margin-top: 8rem;
 }
 .features-section {
     display: flex;
@@ -960,7 +960,6 @@ footer {
     flex-direction: column; 
     align-items: flex-start; 
     width: 45%; 
-    padding: 2rem;
     padding-top: 3rem;
 }
 
@@ -1027,6 +1026,7 @@ footer {
 }
 
 .hero3-image2 img {
+    padding-top: 7rem;
     max-width: 100%;
     height: auto; 
 }
