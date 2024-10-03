@@ -31,7 +31,14 @@ body {
     font-weight: 400;
     font-style: normal;
     font-size: 16px;
+    line-height: 1.8;
 }
+
+
+
+
+
+
 
 .wrapper {
     display: grid;
@@ -45,7 +52,7 @@ body {
     padding-right: var(--container-padding);
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 a {
@@ -62,7 +69,7 @@ a:hover {
     background-color: var(--color-primary);
     color: var(--color-white);
     border-radius: 8px;
-    padding: 12px 25px;
+    padding: 7px 25px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -193,7 +200,9 @@ header .container {
     text-align: center;
 
     h1 {
-        font-size: 35px;
+        padding-left: 4rem;
+        padding-right: 4rem;
+        font-size: 34px;
         color: var(--color-hero-h1);
         margin: 0;
         font-weight: 900;
@@ -343,7 +352,9 @@ margin-top: 7.8rem;
     gap: 16px;
     
 }
-
+.hero-image-tablet {
+    display: none;
+}
 .hero2 {
     justify-content: center;
     align-items: center;
@@ -383,7 +394,7 @@ margin-top: 7.8rem;
     text-align: center;
     padding: 2rem 0;
 }
-
+/* karusellens kod från chatGPT /* 
 /* Hide the carousel container initially on larger screens */
 .carousel-container {
     position: relative;
@@ -1228,9 +1239,10 @@ footer {
 
 
 
-@media (min-width: 768px) {
+@media (min-width: 768px) { 
     .container {
         max-width: 720px;
+        
     }
 
     .btn-toggle-switch .label {
@@ -1277,30 +1289,37 @@ footer {
         padding-left: 0;
     }
 
-    /* Hero Section */
-    .contact-image-container {
-        width: 452px;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+    .hero-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
     }
+ 
 
-    .hero-image {
-        width: 100%;
-        display: flex;
-        justify-content: center;
+    .hero-content h1 {
+    font-size: 44.3px;
+    text-align: center;
+    
+    }
+    .hero-content p {
+        text-align: left;
     }
 
     .hero-image img {
-        max-width: 100%;
-        height: auto;
-        display: flex;
+    display: grid;
+   
+    }
+ 
+ 
+
+    .store-btn {
+    display: none !important;
+        }
+    .store-btn2 {
+      display: flex !important;
     }
 
-    .hero-content h1 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
   
     
     /* Features Section */
@@ -1365,7 +1384,9 @@ footer {
     }
 
     .questions-list {
-        padding-left: 3rem;
+        display: grid;
+        align-items: center;
+        justify-content: space-around;
     }
 
     .faq-content h2 {
@@ -1404,8 +1425,12 @@ footer {
         height: auto;
     }
 
-    .prev, .next {
-        display: none;
+    .prev{
+        left: 70px;
+    }
+    .next {
+        
+        right: 100px;
     }
 
     .contact-boxes {
@@ -1418,11 +1443,11 @@ footer {
         justify-content: center;
         align-items: center;
     }
-
+    
     .contact-boxes-tablet {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         padding-left: 1.5rem;
         padding-right: 1.5rem;
@@ -1484,21 +1509,17 @@ footer {
         display: none;
     }
 
-    .faq-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: stretch;
+
+    .questions-item h3 {
+        font-size: 1.4rem;
     }
 
-    .faq-text {
-        order: 1;
-        width: 100%;
+    .newsletter-section input[type="email"] {
+        width: 300px;
     }
 
-    .questions-list {
-        order: 2;
-        width: 100%;
+    .newsletter-section {
+        padding: 3rem;
     }
 }
 
@@ -1528,25 +1549,55 @@ footer {
         display: flex;
     }
 
+
+
+    .hero-content h1 {
+        padding-left: 0;
+        padding-right: 0;
+    }
     .hero-image img {
         display: flex;
+        
     }
 
     .contact-image-container {
         display: none;
     }
 
+    .carousel-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 1184px; 
+        margin: 0 auto; 
+    }
+    
     .carousel-images {
         display: flex;
-        justify-content: flex-start;
+        transition: transform 0.5s ease-in-out; 
         width: 100%;
-        max-width: 1200px;
-        overflow: hidden;
     }
-
+    
     .hero2-image {
-        flex: 0 0 33.33%;
+        flex: 0 0 33.33%; 
+        transition: transform 0.5s ease; 
+        position: relative; 
     }
+    
+    /* Center image style */
+    .hero2-image.center {
+        transform: scale(1.1); /* Scale up the center image */
+        z-index: 1; /* Ensure the center image is above others */
+    }
+    
+  
+    .carousel-images {
+        overflow: visible; 
+    }
+    
+    
 
     .description-tablet,
     .description-mobile {
@@ -1555,6 +1606,7 @@ footer {
 
     .description {
         display: flex;
+        padding-top: 4rem;
         flex-direction: column;
         width: 636px;
     }
@@ -1572,11 +1624,11 @@ footer {
     }
 
     .prev {
-        left: 10px;
+        left: -1px;
     }
 
     .next {
-        right: 10px;
+        right: -1px;
     }
 
     .hero3, .hero4 {
@@ -1596,7 +1648,7 @@ footer {
     }
 
     .discover-container {
-        padding-top: 16rem;
+        padding-top: 7rem;
     }
 
     .hero-content {
@@ -1605,6 +1657,7 @@ footer {
     }
 
     .hero-content h1 {
+        
         text-align: left;
         font-size: 56px;
         font-weight: 900;
@@ -1644,10 +1697,18 @@ footer {
         flex-direction: column;
         align-items: flex-start;
         gap: 0;
-        padding-bottom: 1rem;
         padding-top: 5rem;
     }
+   .hero3-content2 h2 {
+    max-width: 526px;
+   }
+   .hero3-content2 {
+    .payment-container {
+        padding-top: 0;
+    }
 
+   }
+   
     .hero4 {
         display: flex;
         max-width: 1920px;
@@ -1671,16 +1732,28 @@ footer {
         justify-content: flex-start;
     }
 
-    .features {
-        width: 746px;
-    }
+
 
     .mockup {
+        margin-right: 3rem;
         padding-right: 7rem;
     }
-
+    .container {
+        padding-top: 6rem;
+        p {
+            text-align: left;
+            padding-bottom: 2rem;
+        }
+    }
     .feature-item {
-        padding-top: 4rem;
+        padding-top: 2rem;
+    }
+    .feature-list {
+        
+        max-width: 756px;
+        padding-top: 0rem;
+       
+        gap: 1rem;
     }
 
     .testimonials {
@@ -1691,6 +1764,8 @@ footer {
         margin: 0 auto;
         padding-bottom: 3rem;
         justify-content: center;
+        padding-right: 2rem;
+        padding-left: 2.5rem;
 
     }
 
@@ -1708,7 +1783,8 @@ footer {
     .faq-content {
         display: flex;
         padding-left: 0;
-        flex-direction: column-reverse;
+        padding-right: 0;
+        flex-direction: column;
         width: 417px;
         text-align: left;
     }
@@ -1716,6 +1792,9 @@ footer {
 
     .faq-content h2 {
         display: flex;
+        text-align: left;
+        padding-left: 0;
+        padding-right: 6rem;
         flex-direction: row-reverse;
         font-size: 32px;
         font-weight: 900;
@@ -1747,6 +1826,7 @@ footer {
     }
 
     .questions-item {
+        width: 746px;
         background-color: #fff;
         padding: 15px;
         border-radius: 10px;
@@ -1778,14 +1858,17 @@ footer {
     .questions-item.open .questions-item-content {
         display: block;
     }
-
+    
     .subscribe {
+        padding: 0;
         display: flex;
         justify-content: center;
         align-items: center;
         margin: 0 auto;
     }
-
+    .subscribe-right {
+        max-width: 472px;
+    }
     .subscribe h2 {
         font-size: 24px;
         font-weight: 900;
@@ -1806,9 +1889,11 @@ footer {
 
     .subscribe-content {
         width: 1296px;
+        height: 222px;
+        border-radius: 20px;
         justify-content: center;
         gap: 50px;
-        padding-top: 2rem;
+        padding-bottom: 0;
         padding-left: 3rem;
         padding-right: 3rem;
         display: flex;
@@ -1827,3 +1912,8 @@ footer {
         padding: 0;
     }
 }
+
+
+
+
+
