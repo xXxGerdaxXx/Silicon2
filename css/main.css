@@ -52,7 +52,7 @@ body {
     padding-right: var(--container-padding);
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 2rem;
+    
 }
 
 a {
@@ -100,6 +100,9 @@ a:hover {
 
 .btn-toggle-switch .label {
 display: none;
+}
+.hero-tablet {
+    display: none;
 }
 
 .toggle-switch {
@@ -243,7 +246,7 @@ header .container {
 .hero-image img {
 display: none;
 margin-right: 3rem;
-margin-top: 8rem;
+margin-top: 11rem;
 }
 .features-section {
     display: flex;
@@ -402,7 +405,7 @@ margin-top: 8rem;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 270px;
+    width: 320px;
     background-color: #f3f6ff;
     overflow: hidden; /* Ensures images slide without showing extra content */
 }
@@ -1241,8 +1244,99 @@ footer {
 
 @media (min-width: 768px) { 
     .container {
-        max-width: 720px;
-        
+        max-width: 720px; /* Ensure the maximum width is 720px */
+        margin: 0 auto;   /* Center the container */
+        padding: 0 1rem;  /* Add some padding to the sides */
+    }
+
+    .hero {
+        display: none; /* Hide the desktop version */
+    }
+
+    .hero-tablet {
+        display: block;
+        padding: 2rem 1rem; /* Reduce padding to fit within the container */
+        background: linear-gradient(365deg, rgba(99, 102, 241, 0.1) 0%, rgba(218, 70, 239, 0.05) 42%, rgba(241, 244, 253, 0.07) 83%);
+        width: 100%;
+        max-width: 100%;  /* Ensure the section stays within 720px */
+        margin: 0 auto;    /* Center the section horizontally */
+    }
+
+    /* Layout for the tablet version */
+    .hero-tablet-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Split into two columns for text and image */
+        align-items: center;
+        gap: 2rem;
+    }
+
+    /* Centered title (h1) */
+    .hero-tablet h1 {
+        padding-left: 4rem; /* Adjust padding */
+        padding-right: 4rem;
+        text-align: center;
+        font-size: 43px;
+        margin-bottom: 1rem;
+        grid-column: 1 / span 2; /* Take up the full width (centered) */
+        font-weight: 900;
+        color: var(--color-hero-h1);
+        padding-bottom: 3rem;
+    }
+
+    /* Hero text and buttons */
+    .hero-tablet .hero-text {
+        text-align: left;
+    }
+
+    .hero-tablet .hero-text p {
+        font-size: 1.2rem;
+        color: var(--color-hero-p);
+        margin-bottom: 1.5rem;
+        text-align: left;
+    }
+
+    /* Store buttons */
+    .hero-tablet .store-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-start;
+    }
+
+    /* Specific styles for the buttons */
+    .hero-tablet .store-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #000;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+    }
+
+    .hero-tablet .store-btn img {
+        width: 100px;
+        height: auto;
+    }
+
+    /* Ensure buttons display in tablet mode */
+    .store-btn {
+        display: flex !important;
+    }
+
+    /* Hero image on the right */
+    .hero-tablet .hero-image img {
+        width: auto;
+        max-width: 100%; /* Ensure the image does not exceed its container */
+        margin: 0 auto;
+        display: block;
+    }
+    /* Discover button */
+    .discover-button {
+        display: flex;
+        justify-content: flex-start;
+        padding: 1rem 0;
+        font-size: 14px;
+        color: var(--color-hero-p);
+        padding-top: 4rem;
     }
 
     .btn-toggle-switch .label {
@@ -1252,7 +1346,7 @@ footer {
     header .container {
         gap: 3rem;
     }
-
+    
     footer .credit {
         display: block;
     }
@@ -1262,6 +1356,7 @@ footer {
     }
 
     #brands .container {
+        padding-top: 3rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -1271,56 +1366,16 @@ footer {
     #brand-5, #brand-6 {
         display: none;
     }
-
+    
     #contact {
         display: none;
     }
-
-    .store-btn {
-        display: none;
-    }
-
-    .store-buttons {
-        padding-right: 5rem;
-    }
-
-    .discover-button {
-        display: flex;
-        padding-left: 0;
-    }
-
-    .hero-content {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    align-items: flex-start;
-    }
- 
-
-    .hero-content h1 {
-    font-size: 44.3px;
-    text-align: center;
     
-    }
-    .hero-content p {
-        text-align: left;
-    }
-
-    .hero-image img {
-    display: grid;
-   
-    }
- 
- 
-
-    .store-btn {
-    display: none !important;
-        }
-    .store-btn2 {
-      display: flex !important;
-    }
-
-  
+    
+    
+    
+    
+    
     
     /* Features Section */
     .features-section {
@@ -1526,13 +1581,22 @@ footer {
 @media (min-width: 1400px) {
     .container {
         max-width: 1320px;
+        p {
+            text-align: left;
+            padding-bottom: 2rem;
+        }
     }
 
     header .container {
         grid-template-columns: auto 1fr auto auto;
         gap: 3rem;
     }
-
+    .hero-tablet {
+        display: none;
+    }
+    .hero{
+        display: flex;
+    }
     .navbar {
         display: block;
     }
@@ -1557,6 +1621,7 @@ footer {
     }
     .hero-image img {
         display: flex;
+        padding-left: 2.5rem;
         
     }
 
@@ -1652,7 +1717,7 @@ footer {
     }
 
     .hero-content {
-        padding-left: 5rem;
+        padding-left: 0rem;
         padding-top: 8rem;
     }
 
@@ -1672,6 +1737,7 @@ footer {
         width: 450px;
     }
     .container {
+        
         display: flex;
         justify-content: space-between;
     }
@@ -1735,16 +1801,11 @@ footer {
 
 
     .mockup {
+        padding-top: 5rem;
         margin-right: 3rem;
         padding-right: 7rem;
     }
-    .container {
-        padding-top: 6rem;
-        p {
-            text-align: left;
-            padding-bottom: 2rem;
-        }
-    }
+
     .feature-item {
         padding-top: 2rem;
     }
